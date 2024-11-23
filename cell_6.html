@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        * {
+            margin: 0;
+            background: #EAE7DF;
+        }
+
+        #card_section {
+            width: 1240px;
+            height: 580px;
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 50px 70px;
+        }
+
+        .card_layout {
+            display: flex;
+            gap: 30px;
+        }
+
+        .card_flip {
+            transform-style: preserve-3d;
+            transition: all 1S;
+        }
+
+        .card_flip.flipped {
+            transform: rotateY(180deg);
+        }
+
+        img {
+            background: rgba(255, 255, 255, 0);
+        }
+
+        .Card {
+            position: absolute;
+            width: 150px;
+            height: 250px;
+            border: 8px solid #FDFCFB;
+            border-radius: 10px;
+            background: #FDFCFB;
+            display: grid;
+            place-content: center;
+        }
+
+        .card_back {
+            width: 150px;
+            height: 250px;
+            border-radius: 10px;
+            border: 8px solid #564842;
+            background: #564842;
+            display: grid;
+            place-content: center;
+            transform: rotateY(180deg) translateZ(5px);
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="back" onclick="location.href='index.html'"> B </div>
+
+
+<section id="card_section">
+
+    <div class="card_layout">
+        <div class="card_flip">
+            <div class="Card card_1">
+                <img src="img/card1.svg" />
+            </div>
+            <div class="card_back">
+                <img src="img/cardB.svg" />
+            </div>
+        </div>
+        <div class="card_flip">
+            <div class="Card card_2">
+                <img src="img/card2.svg" />
+            </div>
+            <div class="card_back">
+                <img src="img/cardB.svg" />
+            </div>
+        </div>
+    </div>
+
+    <div class="card_layout">
+        <div class="card_flip">
+            <div class="Card card_3">
+                <img src="img/card3.svg" />
+            </div>
+            <div class="card_back">
+                <img src="img/cardB.svg" />
+            </div>
+        </div>
+        <div class="card_flip">
+            <div class="Card card_4">
+                <img src="img/card4.svg" />
+            </div>
+            <div class="card_back">
+                <img src="img/cardB.svg" />
+            </div>
+        </div>
+    </div>
+
+    <div class="card_layout">
+        <div class="card_flip">
+            <div class="Card card_5">
+                <img src="img/card5.svg" />
+            </div>
+            <div class="card_back">
+                <img src="img/cardB.svg" />
+            </div>
+        </div>
+        <div class="card_flip">
+            <div class="Card card_6">
+                <img src="img/card6.svg" />
+            </div>
+            <div class="card_back">
+                <img src="img/cardB.svg" />
+            </div>
+        </div>
+    </div>
+
+    <div class="card_layout">
+        <div class="card_flip">
+            <div class="Card card_3">
+                <img src="img/card3.svg" />
+            </div>
+            <div class="card_back">
+                <img src="img/cardB.svg" />
+            </div>
+        </div>
+        <div class="card_flip">
+            <div class="Card card_2">
+                <img src="img/card2.svg" />
+            </div>
+            <div class="card_back">
+                <img src="img/cardB.svg" />
+            </div>
+        </div>
+    </div>
+
+    <div class="card_layout">
+        <div class="card_flip">
+            <div class="Card card_7">
+                <img src="img/card7.svg" />
+            </div>
+            <div class="card_back">
+                <img src="img/cardB.svg" />
+            </div>
+        </div>
+        <div class="card_flip">
+            <div class="Card card_1">
+                <img src="img/card1.svg" />
+            </div>
+            <div class="card_back">
+                <img src="img/cardB.svg" />
+            </div>
+        </div>
+    </div>
+
+    <div class="card_layout">
+        <div class="card_flip">
+            <div class="Card card_4">
+                <img src="img/card4.svg" />
+            </div>
+            <div class="card_back">
+                <img src="img/cardB.svg" />
+            </div>
+        </div>
+        <div class="card_flip">
+            <div class="Card card_8">
+                <img src="img/card8.svg" />
+            </div>
+            <div class="card_back">
+                <img src="img/cardB.svg" />
+            </div>
+        </div>
+    </div>
+
+    <div class="card_layout">
+        <div class="card_flip">
+            <div class="Card card_9">
+                <img src="img/card9.svg" />
+            </div>
+            <div class="card_back">
+                <img src="img/cardB.svg" />
+            </div>
+        </div>
+        <div class="card_flip">
+            <div class="Card card_6">
+                <img src="img/card6.svg" />
+            </div>
+            <div class="card_back">
+                <img src="img/cardB.svg" />
+            </div>
+        </div>
+    </div>
+
+    <div class="card_layout">
+        <div class="card_flip">
+            <div class="Card card_9">
+                <img src="img/card9.svg" />
+            </div>
+            <div class="card_back">
+                <img src="img/cardB.svg" />
+            </div>
+        </div>
+        <div class="card_flip">
+            <div class="Card card_8">
+                <img src="img/card8.svg" />
+            </div>
+            <div class="card_back">
+                <img src="img/cardB.svg" />
+            </div>
+        </div>
+    </div>
+
+    <div class="card_layout">
+        <div class="card_flip">
+            <div class="Card card_7">
+                <img src="img/card7.svg" />
+            </div>
+            <div class="card_back">
+                <img src="img/cardB.svg" />
+            </div>
+        </div>
+        <div class="card_flip">
+            <div class="Card card_5">
+                <img src="img/card5.svg" />
+            </div>
+            <div class="card_back">
+                <img src="img/cardB.svg" />
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 모든 카드 플립 요소를 선택
+        const cardFlips = document.querySelectorAll('.card_flip');
+
+        // 각 카드에 클릭 이벤트 리스너 추가
+        cardFlips.forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('flipped');
+            });
+        });
+
+    </script>
+</section>
+</body>
+</html>

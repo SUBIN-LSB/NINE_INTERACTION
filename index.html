@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> BALO </title>
+
+    <style>
+
+        * {
+            margin: 0;
+            background: #EAE7DF;
+        }
+
+        .cell_all {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            width: 500px;
+            margin: 0 auto;
+            gap: 40px;
+        }
+
+        .cell_manu {
+            height: 140px;
+            background: #564842;
+            border-radius: 10px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .cell_manu:hover {
+            scale: 1.05;
+        }
+
+        .cell6 {
+            background-image: url("img/cell_6.svg");
+            background-size: cover;
+            background-position: center;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<main>
+    <div class="LOGO">
+        <svg></svg>
+    </div>
+
+    <div class="cell_all">
+        <div class="cell_manu cell1" onclick="location.href='cell_1.html'"></div>
+        <div class="cell_manu cell2" onclick="location.href='cell_2.html'"></div>
+        <div class="cell_manu cell3" onclick="location.href='cell_3.html'"></div>
+        <div class="cell_manu cell4" onclick="location.href='cell_4.html'"></div>
+        <div class="cell_manu cell5" onclick="location.href='cell_5.html'"></div>
+        <div class="cell_manu cell6" onclick="location.href='cell_6.html'"></div>
+        <div class="cell_manu cell7" onclick="location.href='cell_7.html'"></div>
+        <div class="cell_manu cell8" onclick="location.href='cell_8.html'"></div>
+        <div class="cell_manu cell9" onclick="location.href='cell_9.html'"></div>
+    </div>
+</main>
+
+</body>
+</html>
