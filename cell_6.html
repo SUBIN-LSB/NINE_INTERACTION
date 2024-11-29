@@ -2,308 +2,191 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title> CELL6 </title>
 
-    <style>
-        * {
-            margin: 0;
-            background: #EAE7DB;
-        }
-
-        #card_section {
-            width: 1240px;
-            height: 580px;
-            display: flex;
-            justify-content: center;
-            margin: 0 auto;
-            flex-wrap: wrap;
-            gap: 50px 70px;
-        }
-
-        .card_layout {
-            display: flex;
-            gap: 30px;
-        }
-
-        .card_flip {
-            transform-style: preserve-3d;
-            transition: all 1S;
-        }
-
-        .card_flip.flipped {
-            transform: rotateY(180deg);
-        }
-
-        img {
-            background: rgba(255, 255, 255, 0);
-        }
-
-        .Card {
-            position: absolute;
-            width: 150px;
-            height: 250px;
-            border: 8px solid #564842;
-            border-radius: 10px;
-            background: #564842;
-            display: grid;
-            place-content: center;
-        }
-
-        .card_back {
-            width: 150px;
-            height: 250px;
-            border-radius: 10px;
-            border: 8px solid #FDFCFB;
-            background: #FDFCFB;
-            display: grid;
-            place-content: center;
-            transform: rotateY(180deg) translateZ(5px);
-        }
-
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css" />
 
 </head>
+
 <body>
-<div class="back" onclick="location.href='index.html'"> B </div>
+    <div class="back" onclick="location.href='index.html'"> B </div>
 
+    <section id="card_section">
 
-<section id="card_section">
-
-    <div class="card_layout">
-        <div class="card_flip card_1" data-card="1">
-            <div class="Card">
-                <img src="img/cardB.svg" />
+        <div class="card_layout">
+            <div class="card_flip card_1" data-card="1">
+                <div class="Card">
+                    <img src="img/cardB.svg" />
+                </div>
+                <div class="card_back">
+                    <img src="img/card1.svg" />
+                </div>
             </div>
-            <div class="card_back">
-                <img src="img/card1.svg" />
+            <div class="card_flip card_2" data-card="2">
+                <div class="Card">
+                    <img src="img/cardB.svg" />
+                </div>
+                <div class="card_back">
+                    <img src="img/card2.svg" />
+                </div>
             </div>
         </div>
-        <div class="card_flip card_2" data-card="2">
-            <div class="Card">
-                <img src="img/cardB.svg" />
-            </div>
-            <div class="card_back">
-                <img src="img/card2.svg" />
-            </div>
-        </div>
-    </div>
 
-    <div class="card_layout">
-        <div class="card_flip card_3" data-card="3">
-            <div class="Card">
-                <img src="img/cardB.svg" />
+        <div class="card_layout">
+            <div class="card_flip card_3" data-card="3">
+                <div class="Card">
+                    <img src="img/cardB.svg" />
+                </div>
+                <div class="card_back">
+                    <img src="img/card3.svg" />
+                </div>
             </div>
-            <div class="card_back">
-                <img src="img/card3.svg" />
+            <div class="card_flip card_4" data-card="4">
+                <div class="Card">
+                    <img src="img/cardB.svg" />
+                </div>
+                <div class="card_back">
+                    <img src="img/card4.svg" />
+                </div>
             </div>
         </div>
-        <div class="card_flip card_4" data-card="4">
-            <div class="Card">
-                <img src="img/cardB.svg" />
-            </div>
-            <div class="card_back">
-                <img src="img/card4.svg" />
-            </div>
-        </div>
-    </div>
 
-    <div class="card_layout">
-        <div class="card_flip card_5" data-card="5">
-            <div class="Card">
-                <img src="img/cardB.svg" />
+        <div class="card_layout">
+            <div class="card_flip card_5" data-card="5">
+                <div class="Card">
+                    <img src="img/cardB.svg" />
+                </div>
+                <div class="card_back">
+                    <img src="img/card5.svg" />
+                </div>
             </div>
-            <div class="card_back">
-                <img src="img/card5.svg" />
-            </div>
-        </div>
-        <div class="card_flip card_6" data-card="6">
-            <div class="Card">
-                <img src="img/cardB.svg" />
-            </div>
-            <div class="card_back">
-                <img src="img/card6.svg" />
-            </div>
-        </div>
-    </div>
-
-    <div class="card_layout">
-        <div class="card_flip card_3" data-card="3">
-            <div class="Card">
-                <img src="img/cardB.svg" />
-            </div>
-            <div class="card_back">
-                <img src="img/card3.svg" />
+            <div class="card_flip card_6" data-card="6">
+                <div class="Card">
+                    <img src="img/cardB.svg" />
+                </div>
+                <div class="card_back">
+                    <img src="img/card6.svg" />
+                </div>
             </div>
         </div>
-        <div class="card_flip card_2" data-card="2">
-            <div class="Card">
-                <img src="img/cardB.svg" />
+
+        <div class="card_layout">
+            <div class="card_flip card_3" data-card="3">
+                <div class="Card">
+                    <img src="img/cardB.svg" />
+                </div>
+                <div class="card_back">
+                    <img src="img/card3.svg" />
+                </div>
             </div>
-            <div class="card_back">
-                <img src="img/card2.svg" />
+            <div class="card_flip card_2" data-card="2">
+                <div class="Card">
+                    <img src="img/cardB.svg" />
+                </div>
+                <div class="card_back">
+                    <img src="img/card2.svg" />
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="card_layout">
-        <div class="card_flip card_7" data-card="7">
-            <div class="Card">
-                <img src="img/cardB.svg" />
+        <div class="card_layout">
+            <div class="card_flip card_7" data-card="7">
+                <div class="Card">
+                    <img src="img/cardB.svg" />
+                </div>
+                <div class="card_back">
+                    <img src="img/card7.svg" />
+                </div>
             </div>
-            <div class="card_back">
-                <img src="img/card7.svg" />
+            <div class="card_flip card_1" data-card="1">
+                <div class="Card">
+                    <img src="img/cardB.svg" />
+                </div>
+                <div class="card_back">
+                    <img src="img/card1.svg" />
+                </div>
             </div>
         </div>
-        <div class="card_flip card_1" data-card="1">
-            <div class="Card">
-                <img src="img/cardB.svg" />
+
+        <div class="card_layout">
+            <div class="card_flip card_4" data-card="4">
+                <div class="Card">
+                    <img src="img/cardB.svg" />
+                </div>
+                <div class="card_back">
+                    <img src="img/card4.svg" />
+                </div>
             </div>
-            <div class="card_back">
-                <img src="img/card1.svg" />
+            <div class="card_flip card_8" data-card="8">
+                <div class="Card">
+                    <img src="img/cardB.svg" />
+                </div>
+                <div class="card_back">
+                    <img src="img/card8.svg" />
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="card_layout">
-        <div class="card_flip card_4" data-card="4">
-            <div class="Card">
-                <img src="img/cardB.svg" />
+        <div class="card_layout">
+            <div class="card_flip card_9" data-card="9">
+                <div class="Card">
+                    <img src="img/cardB.svg" />
+                </div>
+                <div class="card_back">
+                    <img src="img/card9.svg" />
+                </div>
             </div>
-            <div class="card_back">
-                <img src="img/card4.svg" />
+            <div class="card_flip card_6" data-card="6">
+                <div class="Card">
+                    <img src="img/cardB.svg" />
+                </div>
+                <div class="card_back">
+                    <img src="img/card6.svg" />
+                </div>
             </div>
         </div>
-        <div class="card_flip card_8" data-card="8">
-            <div class="Card">
-                <img src="img/cardB.svg" />
+
+        <div class="card_layout">
+            <div class="card_flip card_9" data-card="9">
+                <div class="Card">
+                    <img src="img/cardB.svg" />
+                </div>
+                <div class="card_back">
+                    <img src="img/card9.svg" />
+                </div>
             </div>
-            <div class="card_back">
-                <img src="img/card8.svg" />
+            <div class="card_flip card_8" data-card="8">
+                <div class="Card">
+                    <img src="img/cardB.svg" />
+                </div>
+                <div class="card_back">
+                    <img src="img/card8.svg" />
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="card_layout">
-        <div class="card_flip card_9" data-card="9">
-            <div class="Card">
-                <img src="img/cardB.svg" />
+        <div class="card_layout">
+            <div class="card_flip card_7" data-card="7">
+                <div class="Card">
+                    <img src="img/cardB.svg" />
+                </div>
+                <div class="card_back">
+                    <img src="img/card7.svg" />
+                </div>
             </div>
-            <div class="card_back">
-                <img src="img/card9.svg" />
+            <div class="card_flip card_5" data-card="5">
+                <div class="Card">
+                    <img src="img/cardB.svg" />
+                </div>
+                <div class="card_back">
+                    <img src="img/card5.svg" />
+                </div>
             </div>
         </div>
-        <div class="card_flip card_6" data-card="6">
-            <div class="Card">
-                <img src="img/cardB.svg" />
-            </div>
-            <div class="card_back">
-                <img src="img/card6.svg" />
-            </div>
-        </div>
-    </div>
 
-    <div class="card_layout">
-        <div class="card_flip card_9" data-card="9">
-            <div class="Card">
-                <img src="img/cardB.svg" />
-            </div>
-            <div class="card_back">
-                <img src="img/card9.svg" />
-            </div>
-        </div>
-        <div class="card_flip card_8" data-card="8">
-            <div class="Card">
-                <img src="img/cardB.svg" />
-            </div>
-            <div class="card_back">
-                <img src="img/card8.svg" />
-            </div>
-        </div>
-    </div>
+    </section>
 
-    <div class="card_layout">
-        <div class="card_flip card_7" data-card="7">
-            <div class="Card">
-                <img src="img/cardB.svg" />
-            </div>
-            <div class="card_back">
-                <img src="img/card7.svg" />
-            </div>
-        </div>
-        <div class="card_flip card_5" data-card="5">
-            <div class="Card">
-                <img src="img/cardB.svg" />
-            </div>
-            <div class="card_back">
-                <img src="img/card5.svg" />
-            </div>
-        </div>
-    </div>
+    <script src="script.js"></script>
 
-    <script>
-        const cardFlips = document.querySelectorAll('.card_flip');
-        // const start = document.querySelectorAll('.card_layout');
-        let lastFlippedCard = null; // 마지막으로 플립된 카드
-        let isFlipping = false; // 현재 플립 중인지 여부
-        let matchedCards = 0; // 맞춘 카드 수
-
-        window.onload = function() {
-            cardFlips.forEach(card => {
-                card.classList.add('flipped'); // 모든 카드 플립
-            });
-
-            // 1초 후에 모든 카드 다시 뒤집기
-            setTimeout(() => {
-                cardFlips.forEach(card => {
-                    card.classList.remove('flipped'); // 모든 카드 다시 뒤집기
-                });
-            }, 2000); // 1초 후에 실행
-        };
-
-        cardFlips.forEach(card => {
-            card.addEventListener('click', () => {
-                if (isFlipping || card.classList.contains('flipped')) return; // 현재 플립 중이거나 이미 플립된 카드 클릭 무시
-
-                card.classList.add('flipped'); // 카드 플립
-
-                if (lastFlippedCard) {
-                    // 이전 카드와 현재 카드 비교
-                    if (lastFlippedCard.dataset.card === card.dataset.card) {
-                        // 같은 카드일 경우
-                        lastFlippedCard = null; // 마지막 카드 초기화
-                        matchedCards += 2; // 맞춘 카드 수 증가
-                        if (matchedCards === cardFlips.length) {
-                            // 모든 카드를 맞춘 경우
-                            setTimeout(() => {
-                                resetGame();
-                            }, 1500);
-                        }
-                    } else {
-                        // 다른 카드일 경우
-                        isFlipping = true; // 플립 중 상태로 변경
-                        setTimeout(() => {
-                            card.classList.remove('flipped'); // 현재 카드 뒤집기
-                            lastFlippedCard.classList.remove('flipped'); // 이전 카드 뒤집기
-                            lastFlippedCard = null; // 마지막 카드 초기화
-                            isFlipping = false; // 플립 중 상태 해제
-                        }, 700); // 1초 후에 다시 뒤집기
-                    }
-                } else {
-                    // 첫 번째 카드 클릭 시
-                    lastFlippedCard = card; // 마지막 카드 업데이트
-                }
-            });
-        });
-
-        function resetGame() {
-            cardFlips.forEach(card => {
-                card.classList.remove('flipped'); // 모든 카드 초기화
-            });
-            matchedCards = 0; // 맞춘 카드 수 초기화
-            lastFlippedCard = null; // 마지막 카드 초기화
-        }
-
-    </script>
-</section>
 </body>
 </html>

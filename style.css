@@ -1,0 +1,208 @@
+/* 기본 스타일 */
+* {
+    margin: 0;
+}
+body{
+    background: #EAE7DB;
+}
+
+/* 인덱스 부분 css */
+
+.cell_all {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 500px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.cell_manu {
+    height: 140px;
+    background: #564842;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.cell_manu:hover {
+    scale: 1.05;
+}
+
+/* 섬네일 이미지*/
+
+.cell1 {
+    /*background-image: url("img/cell_1.svg");*/
+    background-size: cover;
+    background-position: center;
+}
+.cell2 {
+    background-image: url("img/cell_2.svg");
+    background-size: cover;
+    background-position: center;
+}
+.cell3 {
+    background-image: url("img/cell_3.svg");
+    background-size: cover;
+    background-position: center;
+}
+.cell4 {
+    /*background-image: url("img/cell_4.svg");*/
+    background-size: cover;
+    background-position: center;
+}
+.cell5 {
+    background-image: url("img/cell_5.svg");
+    background-size: cover;
+    background-position: center;
+}
+.cell6 {
+    background-image: url("img/cell_6.svg");
+    background-size: cover;
+    background-position: center;
+}
+.cell7 {
+    /*background-image: url("img/cell_7.svg");*/
+    background-size: cover;
+    background-position: center;
+}
+.cell8 {
+    /*background-image: url("img/cell_8.svg");*/
+    background-size: cover;
+    background-position: center;
+}
+.cell9 {
+    background-image: url("img/cell_9.svg");
+    background-size: cover;
+    background-position: center;
+}
+
+/* 첫번째 셀 부분 css */
+
+/* 두번째 셀 부분 css */
+
+#img_card_section {
+    width: 1920px;
+    height: 580px;
+    position: relative;
+    top: 120px;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+.img_card {
+    /* position: relative; */
+    display: flex;
+    /* text-align: center; */
+    justify-content: center;
+    /*align-items: center;*/
+}
+
+.img_card_B {
+    position: absolute;
+    /* margin: 0 auto; */
+    z-index: 50;
+    pointer-events: none;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* text-align: center; */
+    /* align-items: center; */
+}
+
+.flower_img_1 {
+    position: relative;
+    z-index: 10;
+    left: -4%;
+    top: 175px;
+}
+.flower_img_2 {
+    position: relative;
+    top: 5px;
+}
+.flower_img_3 {
+    position: relative;
+    right: -5%;
+    top: 175px;
+}
+
+/* 마우스 호버 애니메이션 */
+
+.flower {
+    transform: scale(0.9) rotate(180deg);
+    opacity: 0;
+    transition: transform 3.5s ease-in-out, opacity 3.5s ease-in-out;
+    margin: 5000px;
+    /*background: transparent;*/
+    pointer-events: auto;
+}
+.flower:hover {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+    transition: transform 0.3s ease-in-out, opacity 0.1s ease-in-out;
+    padding: 5000px;
+}
+
+/* 세번째 셀 부분 css */
+
+/* 네번째 셀 부분 css */
+
+/* 다섯번째 셀 부분 css */
+
+/* 여섯번째 셀 부분 css */
+
+#card_section {
+    width: 1240px;
+    height: 580px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 50px 70px;
+}
+
+.card_layout {
+    display: flex;
+    gap: 30px;
+}
+
+.card_flip {
+    transform-style: preserve-3d;
+    transition: all 1S;
+}
+
+.card_flip.flipped {
+    transform: rotateY(180deg);
+}
+
+img {
+    background: rgba(255, 255, 255, 0);
+}
+
+/* 카드의 앞, 뒷면 */
+
+.Card {
+    position: absolute;
+    width: 150px;
+    height: 250px;
+    border-radius: 10px;
+    border: 8px solid #564842;
+    background: #564842;
+    display: grid;
+    place-content: center;
+}
+
+.card_back {
+    width: 150px;
+    height: 250px;
+    border-radius: 10px;
+    border: 8px solid #FDFCFB;
+    background: #FDFCFB;
+    display: grid;
+    place-content: center;
+    transform: rotateY(180deg) translateZ(5px);
+}
+
+/* 일곱번째 셀 부분 css */
+
+/* 여덟번째 셀 부분 css */
+
+/* 아홉번째 셀 부분 css */
