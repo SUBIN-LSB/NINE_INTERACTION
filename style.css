@@ -1,12 +1,70 @@
 /* 기본 스타일 */
 * {
     margin: 0;
-}
-body{
-    background: #EAE7DB;
+
 }
 
+body{
+    background: #EAE7DB;
+    font-family: 'Cafe24Ssurround';
+}
+
+@font-face {
+    font-family: 'Cafe24Ssurround';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.back {
+    position: absolute;
+    top: 7px;
+    left: 10px;
+    z-index: 1000;
+    font-size: 50px;
+    color: #564842;
+    transition: all 0.3s ease-in-out;
+}
+
+.back:hover {
+    font-size: 55px;
+    color: #816D61;
+}
+
+.back1 {
+    position: absolute;
+    top: 7px;
+    left: 10px;
+    z-index: 1000;
+    font-size: 50px;
+    color: #CAB9B1;
+    transition: all 0.3s ease-in-out;
+}
+
+.back1:hover {
+    font-size: 55px;
+    color: #EAE7DB;
+}
+
+
 /* 인덱스 부분 css */
+
+.LOGO {
+    position: absolute;
+    top: 15%;
+    left: 36.8%;
+    font-size: 55px;
+    color: #564842;
+}
+
+#index_section {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .cell_all {
     display: grid;
@@ -18,7 +76,6 @@ body{
 
 .cell_manu {
     height: 140px;
-    background: #564842;
     border-radius: 10px;
     transition: all 0.3s ease-in-out;
 }
@@ -27,10 +84,11 @@ body{
     scale: 1.05;
 }
 
+
 /* 섬네일 이미지*/
 
 .cell1 {
-    /*background-image: url("img/cell_1.svg");*/
+    background-image: url("img/cell_1.svg");
     background-size: cover;
     background-position: center;
 }
@@ -45,7 +103,7 @@ body{
     background-position: center;
 }
 .cell4 {
-    /*background-image: url("img/cell_4.svg");*/
+    background-image: url("img/cell_4.svg");
     background-size: cover;
     background-position: center;
 }
@@ -60,12 +118,12 @@ body{
     background-position: center;
 }
 .cell7 {
-    /*background-image: url("img/cell_7.svg");*/
+    background-image: url("img/cell_7.svg");
     background-size: cover;
     background-position: center;
 }
 .cell8 {
-    /*background-image: url("img/cell_8.svg");*/
+    background-image: url("img/cell_8.svg");
     background-size: cover;
     background-position: center;
 }
@@ -75,7 +133,44 @@ body{
     background-position: center;
 }
 
+
 /* 첫번째 셀 부분 css */
+
+#mushroom_section {
+    width: 100%;
+    height: 100vH;
+    background-image: url("img/cell_1_B.svg");
+}
+
+.mush {
+    position: relative;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, 0);
+}
+
+.wobble {
+    transform-origin: bottom;
+    animation: mush_wobble 0.4s ease-in-out;
+}
+
+@keyframes mush_wobble {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.1, 0.9);
+    }
+    50% {
+        transform: scale(0.9, 1.1);
+    }
+    75% {
+        transform: scale(1.03, 0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
 
 /* 두번째 셀 부분 css */
 
@@ -141,20 +236,285 @@ body{
     padding: 5000px;
 }
 
+
 /* 세번째 셀 부분 css */
+
+.CATs {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.CAT1_eye1 {
+    position: absolute;
+    top: 367px;
+    left: 244px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*background: rgba(146, 159, 136, 0.52);*/
+    width: 300px;
+    height: 120px;
+    overflow: hidden;
+}
+
+.cat_ear {
+    transform-origin: bottom;
+    transform: rotate(0) translateX(0) translateY(0);
+    transition: all 1S ease-in-out;
+}
+.cat_ear.found1 {
+    transform-origin: bottom;
+    transform: rotate(10deg) translateX(-20px) translateY(-10px);
+    transition: all 1S ease-in-out;
+}
+
+.cat_closed {
+    width: 284px;
+    height: 118px;
+    transform-origin: top;
+    transform: rotateX(180deg);
+    transition: all 1S ease-in-out;
+}
+.cat_closed.found2 {
+    width: 284px;
+    height: 118px;
+    transform-origin: top;
+    transform: rotateX(0);
+    transition: all 1S ease-in-out;
+}
+
+.cat_thug {
+    transform: translateY(0);
+    transition: all 1S ease-in-out;
+}
+.cat_thug.found3 {
+    transform: translateY(35px);
+    transition: all 1S ease-in-out;
+}
+
 
 /* 네번째 셀 부분 css */
 
+.weather_animation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-origin: bottom;
+    animation: WT_down 2s ease alternate forwards;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    z-index: 1;
+}
+
+@keyframes WT_up {
+    from {
+        transform: rotate(-180deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes WT_down {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(180deg);
+    }
+}
+
+.weather_animation.active2 {
+    animation: WT_up 2s ease alternate forwards;
+    z-index: 10;
+
+}
+
+.WT_anime1 {
+    background: url("img/cell_4_W1.gif")no-repeat;
+}
+
+.WT_anime2 {
+    background: url("img/cell_4_W2.gif")no-repeat;
+}
+
+.WT_anime3 {
+    background: url("img/cell_4_W3.gif")no-repeat;
+}
+
+.WT_anime4 {
+    background: url("img/cell_4_W4.gif")no-repeat;
+}
+
+
 /* 다섯번째 셀 부분 css */
+
+#flip_section {
+    width: 1920px;
+    height: 957px;
+    overflow: hidden;
+}
+
+@keyframes reefFlip {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(3000deg);
+    }
+}
+
+@keyframes right1 {
+    0% {
+        transform: translateX(-150%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes right2 {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(150%);
+    }
+}
+
+.reef_flip1 {
+    animation: right1 15s ease-in-out infinite;
+}
+
+.reef_flip2 {
+    animation: right2 15s ease-in-out infinite;
+}
+
+.reef_anime {
+    transform-style: preserve-3d;
+    animation: reefFlip 15s linear infinite ;
+    /*transition: all 1s;*/
+    transform-origin: center center 0;
+}
+
+img {
+    background: rgba(255, 255, 255, 0);
+}
+
+.reef {
+    position: absolute;
+    width: auto;
+    height: 385px;
+    background: rgba(255, 255, 255, 0);
+    display: grid;
+    place-content: center;
+}
+
+.reef_back {
+    position: absolute;
+    width: auto;
+    height: 385px;
+    background: rgba(255, 255, 255, 0);
+    display: grid;
+    place-content: center;
+    transform: rotateY(-180deg) translateZ(5px);
+}
+
+.reefB {
+    transform: rotate(180deg);
+}
+
+.reef1 {
+    position: absolute;
+    top: -150px;
+    left: 600px;
+}
+
+.reef2 {
+    position: absolute;
+    top: 350px;
+    left: -500px;
+}
+
+.reef3 {
+    position: absolute;
+    top: 550px;
+    left: 600px;
+}
+
+.reef4 {
+    position: absolute;
+    top: 650px;
+    left: 990px;
+}
+
+.reef5 {
+    position: absolute;
+    top: -50px;
+    left: 1700px;
+}
+
+.reef6 {
+    position: absolute;
+    top: 270px;
+    left: 1300px;
+}
+
+.reef7 {
+    position: absolute;
+    top: 470px;
+    left: 2000px;
+}
+
+.reef8 {
+    position: absolute;
+    top: -50px;
+    left: 900px;
+}
+
+.reef9 {
+    position: absolute;
+    top: 820px;
+    left: 50px;
+}
+
+.reef10 {
+    position: absolute;
+    top: 620px;
+    left: -180px;
+}
+
+.reef11 {
+    opacity: 0;
+    position: absolute;
+    top: 80px;
+    left: -500px;
+}
+
+.reef12 {
+    position: absolute;
+    top: 30px;
+    left: 10px;
+}
+
 
 /* 여섯번째 셀 부분 css */
 
 #card_section {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 0);
     width: 1240px;
     height: 580px;
     display: flex;
     justify-content: center;
-    margin: 0 auto;
+    margin-top: 30px;
     flex-wrap: wrap;
     gap: 50px 70px;
 }
@@ -201,8 +561,311 @@ img {
     transform: rotateY(180deg) translateZ(5px);
 }
 
+
 /* 일곱번째 셀 부분 css */
+
+#cat_section {
+    position: relative;
+    width: 100%;
+    height: 957px;
+    overflow: hidden;
+}
+
+.cell7_cat1 {
+    position: absolute;
+    z-index: 1;
+}
+
+.cat_anime-1 {
+    position: absolute;
+    width: 190px;
+    height: 163px;
+    top: 200px;
+    left: 230px;
+    z-index: 2;
+}
+
+.cell7_cat2 {
+    position: absolute;
+    top: 400px;
+    left: 0;
+    z-index: 1;
+}
+
+.cell7_cat3 {
+    position: absolute;
+    right: 50px;
+    z-index: 10;
+}
+
+.cat_anime-2 {
+    position: absolute;
+    width: 157px;
+    height: 240px;
+    bottom: 330px;
+    right: 230px;
+    z-index: 11;
+}
+
+.cell7_cat4 {
+    position: absolute;
+    bottom: -500px;
+    right: 0;
+    z-index: 10;
+}
+
+.cell7_cat5 {
+    position: absolute;
+    z-index: 20;
+}
+
+.cat_anime-3 {
+    position: absolute;
+    width: 143px;
+    height: 182px;
+    bottom: 130px;
+    right: 700px;
+    z-index: 21;
+}
+
+.cell7_cat6 {
+    position: absolute;
+    bottom: -550px;
+    right: -170px;
+    z-index: 20;
+}
+
+.cat_background1 {
+    position: absolute;
+    bottom: 0;
+    z-index: 5;
+}
+
+.cat_background2 {
+    position: absolute;
+    bottom: 0;
+    z-index: 15;
+}
+
+.cat_background3 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 25;
+}
+
+.cat_background4 {
+    position: absolute;
+    bottom: 0;
+    z-index: 30;
+}
+
+.cat_background1, .cat_background2, .cat_background3, .cat_background4 {
+    pointer-events: none; /* 마우스 이벤트를 무시 */
+}
+
+/* 기본 로테이션 애니메이션 */
+@keyframes CAT_rotate {
+    0% {
+        transform: rotate(-2deg);
+    }
+    50% {
+        transform: rotate(8deg);
+    }
+    100% {
+        transform: rotate(-2deg);
+    }
+}
+
+@keyframes CAT_down {
+    0% {
+        transform: translateY(0);
+    }
+    20% {
+        transform: translateY(250px);
+    }
+    40% {
+        transform: translateY(250px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes CAT_up {
+    0% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-500px);
+    }
+    60% {
+        transform: translateY(-500px);
+    }
+    90% {
+        transform: translateY(-500px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/*.cat_anime1 {*/
+/*    animation: down 1s ease-in alternate;*/
+/*}*/
+
+/*.cat_anime2 {*/
+/*    animation: up 2s ease-in alternate;*/
+/*}*/
+
+.cat_ani {
+    animation: CAT_rotate 2s ease-in-out infinite alternate;
+    transform-origin: bottom center;
+}
+
 
 /* 여덟번째 셀 부분 css */
 
+.step_animation {
+    display: none;
+    opacity: 0;
+    pointer-events: none; /* 클릭 불가능 */
+    transition: opacity 0.2s ease;
+}
+
+.step_animation.active1 {
+    display: block;
+    opacity: 1;
+    pointer-events: auto; /* 활성화된 상태에서는 클릭 가능 */
+}
+
+.ST_anime1,.ST_anime2,.ST_anime3,.ST_anime4,.ST_anime5 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 417px;
+    height: 699px;
+}
+
+.ST_anime1 {
+    background: url('img/cell_8_1.svg')no-repeat;
+    background-size: 2085px;
+    animation: step_anime1 0.7s steps(5);
+    background-position-x:calc(-2085px + 417px);
+}
+
+.ST_anime2 {
+    background: url('img/cell_8_2.svg')no-repeat;
+    background-size: 2085px;
+    animation: step_anime1 0.7s steps(5);
+    background-position-x:calc(-2085px + 417px);
+}
+
+.ST_anime3 {
+    background: url('img/cell_8_3.svg')no-repeat;
+    background-size: 2919px;
+    animation: step_anime2 0.7s steps(7);
+    background-position-x:calc(-2919px + 417px);
+}
+
+.ST_anime4 {
+    background: url('img/cell_8_4.svg')no-repeat;
+    background-size: 2502px;
+    animation: step_anime3 0.7s steps(6);
+    background-position-x:calc(-2502px + 417px);
+}
+
+.ST_anime5 {
+    background: url('img/cell_8_5.svg')no-repeat;
+    background-size: 2919px;
+    animation: step_anime2 0.7s steps(7);
+    background-position-x:calc(-2919px + 417px);
+}
+
+@keyframes step_anime1{
+    0%{
+        background-position-x:0;
+    }
+    100%{
+        background-position-x:-2085px;
+    }
+}
+
+@keyframes step_anime2{
+    0%{
+        background-position-x:0;
+    }
+    100%{
+        background-position-x:-2919px;
+    }
+}
+
+@keyframes step_anime3{
+    0%{
+        background-position-x:0;
+    }
+    100%{
+        background-position-x:-2502px;
+    }
+}
+
+
 /* 아홉번째 셀 부분 css */
+
+#clover_section {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.clover_B {
+    pointer-events: none;
+}
+
+.offEvent:hover {
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+}
+
+.offEvent:hover {
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+/*.colver_E1 {*/
+/*    position: absolute;*/
+/*    top: 22.4%;*/
+/*    left: 11.4%;*/
+/*    width: 100px;*/
+/*    height: 100px;*/
+/*}*/
+
+/*.colver_E2 {*/
+/*    position: absolute;*/
+/*    bottom: 14.6%;*/
+/*    right: 27.4%;*/
+/*    width: 100px;*/
+/*    height: 100px;*/
+/*}*/
+
+.clover_S {
+    opacity: 1;
+    transition: all 1s ease-in-out;
+}
+
+.clover_S.fine1 {
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+
+.clover {
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+
+.clover.fine2 {
+    opacity: 1;
+    transition: all 1s ease-in-out;
+}

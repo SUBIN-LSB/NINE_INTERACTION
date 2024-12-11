@@ -1,19 +1,118 @@
 // 첫번째 셀 부분 script
 
+const mushElements = document.querySelectorAll('.mush1, .mush2, .mush3');
+
+// 각 요소에 클릭 이벤트 추가
+mushElements.forEach((mush) => {
+    mush.addEventListener('click', () => {
+        mush.classList.add('wobble');
+
+        // 애니메이션이 끝나면 wobble 클래스 제거
+        mush.addEventListener('animationend', () => {
+            mush.classList.remove('wobble');
+        }, { once: true }); // 이벤트를 한 번만 실행
+    });
+});
+
+
+
 // 두번째 셀 부분 script
 
 document.querySelectorAll('.flower').forEach((path) => {
-    const bbox = path.getBBox(); // 각 svg 페스마다 중심을 설정해서 애니메이션이 정상작동할 수 있게...
-    const centerX = bbox.x + bbox.width / 2;
-    const centerY = bbox.y + bbox.height / 2;
+    const box = path.getBBox(); // 각 svg 페스마다 중심을 설정해서 애니메이션이 정상작동할 수 있게...
+    const centerX = box.x + box.width / 2;
+    const centerY = box.y + box.height / 2;
 
     path.style.transformOrigin = `${centerX}px ${centerY}px`;
 });
+
+
+
 // 세번째 셀 부분 script
+
+const svgElements = document.querySelectorAll('.cat_body');
+const groupMovementRadius = 10;
+
+document.addEventListener('mousemove', (event) => {
+    svgElements.forEach((svg) => {
+        const eyesGroup = svg.querySelector('.cat_eyes');
+        const svgRect = svg.getBoundingClientRect();
+        const eyeGroupCenter = { x: svgRect.width / 2, y: 75.6122 };
+
+        const mouseX = event.clientX - svgRect.left;
+        const mouseY = event.clientY - svgRect.top;
+
+        const deltaX = mouseX - eyeGroupCenter.x;
+        const deltaY = mouseY - eyeGroupCenter.y;
+        const angle = Math.atan2(deltaY, deltaX);
+
+        const distance = Math.min(groupMovementRadius, Math.sqrt(deltaX * deltaX + deltaY * deltaY));
+
+        const newX = Math.cos(angle) * distance;
+        const newY = Math.sin(angle) * distance;
+
+        eyesGroup.setAttribute('transform', `translate(${newX}, ${newY})`);
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const cat1 = document.querySelector('.CAT1_eye1');
+    const cat2 = document.querySelector('.CAT2');
+    const cat3 = document.querySelector('.CAT3');
+
+    if (cat1) {
+        cat1.addEventListener('click', () => {
+            const catClosed = cat1.querySelector('.cat_closed');
+            toggleClass(catClosed, 'found2');
+        });
+    }
+
+    if (cat2) {
+        cat2.addEventListener('click', () => {
+            const catEar = cat2.querySelector('.cat_ear');
+            toggleClass(catEar, 'found1');
+        });
+    }
+
+    if (cat3) {
+        cat3.addEventListener('click', () => {
+            const catThug = cat3.querySelector('.cat_thug');
+            toggleClass(catThug, 'found3');
+        });
+    }
+
+    function toggleClass(catDiv, className) {
+        if (!catDiv) return; // 방어 코드 추가
+        catDiv.classList.add(className);
+        setTimeout(() => {
+            catDiv.classList.remove(className);
+        }, 2000);
+    }
+});
+
+
 
 // 네번째 셀 부분 script
 
+document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll(".weather_animation");
+    let currentIndex = 0;
+
+    sections.forEach((section, index) => {
+        section.addEventListener("click", () => {
+            sections[currentIndex].classList.remove("active2");
+            currentIndex = (index + 1) % sections.length; // 다음 섹션으로 순환
+            sections[currentIndex].classList.add("active2");
+        });
+    });
+});
+
+
+
 // 다섯번째 셀 부분 script
+
+//XXX
+
 
 // 여섯번째 셀 부분 script
 
@@ -81,9 +180,104 @@ function resetGame() { // 모든 카드를 맞추면..
     matchedCards = 0; // 맞춘 카드 수 초기화로 다시 시작했을 때(다 맞춰서 게임이 다시 시작되었을 때)플립을 할 수 있도록..
     lastFlippedCard = null;
 }
+
+
 // 일곱번째 셀 부분 script
+
+const animeSections = document.querySelectorAll('.cat_anime-1, .cat_anime-2, .cat_anime-3');
+
+animeSections.forEach((section) => {
+    const anime1 = section.querySelector('.cat_anime1');
+    const anime2 = section.querySelector('.cat_anime2');
+    let isAnimating = false; // 애니메이션 중인지 확인하는 플래그
+
+    section.addEventListener('click', () => {
+        if (isAnimating) return; // 애니메이션 중이면 클릭 무시
+        isAnimating = true; // 애니메이션 시작
+
+        // 애니메이션 추가
+        anime1.style.animation = 'CAT_down 3s ease-in forwards';
+        anime2.style.animation = 'CAT_up 2.5s ease-in forwards';
+
+        // 각각의 애니메이션이 끝날 때 초기화
+        anime1.addEventListener(
+            'animationend',
+            () => {
+                anime1.style.animation = ''; // 애니메이션 초기화
+                isAnimating = false; // 애니메이션 종료
+            },
+            { once: true } // 이벤트가 한 번만 실행되도록 설정
+        );
+
+        anime2.addEventListener(
+            'animationend',
+            () => {
+                anime2.style.animation = ''; // 애니메이션 초기화
+                isAnimating = false; // 애니메이션 종료
+            },
+            { once: true } // 이벤트가 한 번만 실행되도록 설정
+        );
+    });
+});
+
 
 // 여덟번째 셀 부분 script
 
+const animations = document.querySelectorAll('.step_animation');
+let currentIndex = 4; // 초기 애니메이션 인덱스
+
+function showNextAnimation() {
+    // 현재 활성화된 애니메이션에서 active 제거
+    animations[currentIndex].classList.remove('active1');
+
+    // 다음 애니메이션 인덱스 계산 (루프 처리)
+    currentIndex = (currentIndex + 1) % animations.length;
+
+    // 다음 애니메이션에 active 추가
+    animations[currentIndex].classList.add('active1');
+}
+
+// 이벤트 리스너 등록
+animations.forEach(animation => {
+    animation.addEventListener('click', showNextAnimation);
+});
+
+
 // 아홉번째 셀 부분 script
 
+// 필요한 요소들을 선택
+const cloverEElements = document.querySelectorAll(".clover_E");
+const cloverSElements = document.querySelectorAll(".clover_S");
+const clover = document.querySelector(".clover");
+
+// 클릭된 요소의 상태를 추적
+let clickedCount = 0;
+
+// 각 clover_E 요소에 클릭 이벤트 추가
+cloverEElements.forEach((el, index) => {
+    el.addEventListener("click", () => {
+        // 관련된 clover_S 요소에 fine1 클래스 추가
+        const targetCloverS = cloverSElements[index];
+        if (!targetCloverS.classList.contains("fine1")) {
+            targetCloverS.classList.add("fine1");
+            clickedCount++;
+        }
+
+        // 모든 clover_S 요소에 fine1이 추가되었는지 확인
+        if (clickedCount === cloverSElements.length) {
+            clover.classList.add("fine2"); // clover 요소 보이기
+
+            // 2초 후 초기화
+            setTimeout(() => {
+                // 모든 fine1 클래스 제거
+                cloverSElements.forEach((el) => el.classList.remove("fine1"));
+
+                // clover 의 fine2 클래스 제거
+                clover.classList.remove("fine2");
+
+                // 클릭 카운트 초기화
+                clickedCount = 0;
+            }, 5000);
+        }
+    });
+});
