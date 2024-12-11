@@ -37,25 +37,30 @@ document.addEventListener('mousemove', (event) => {
     svgElements.forEach((svg) => {
         const eyesGroup = svg.querySelector('.cat_eyes');
         const svgRect = svg.getBoundingClientRect();
-        const eyeGroupCenter = { x: svgRect.width / 2, y: 75.6122 };
+        const eyeGroupCenter = { x: svgRect.width / 2, y: 75.6122 }; // 중심 지정
 
+        // 마우스 x, y 좌표 변환
         const mouseX = event.clientX - svgRect.left;
         const mouseY = event.clientY - svgRect.top;
 
+        // .eyes 에서 지정해 준 중심이랑 마우스의 x, y 축을 계산
         const deltaX = mouseX - eyeGroupCenter.x;
         const deltaY = mouseY - eyeGroupCenter.y;
-        const angle = Math.atan2(deltaY, deltaX);
+        const angle = Math.atan2(deltaY, deltaX); // + 각도 계산
 
-        const distance = Math.min(groupMovementRadius, Math.sqrt(deltaX * deltaX + deltaY * deltaY));
 
+        const distance = Math.min(groupMovementRadius, Math.sqrt(deltaX * deltaX + deltaY * deltaY)); // 최대 거리 제한
+
+        // 새로운 x, y 축 좌표를 계산해서 >
         const newX = Math.cos(angle) * distance;
         const newY = Math.sin(angle) * distance;
 
+        // 그 계산된 좌표를 사용해 유령의 눈이 마우스를 바라보는것처럼 하게 함
         eyesGroup.setAttribute('transform', `translate(${newX}, ${newY})`);
     });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => { // 클릭 이벤트 토글
     const cat1 = document.querySelector('.CAT1_eye1');
     const cat2 = document.querySelector('.CAT2');
     const cat3 = document.querySelector('.CAT3');
